@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('subject_grade', function (Blueprint $table) {
+        Schema::create('cycles', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('subject_id')->nullable();
-            $table->unsignedBigInteger('grade_id')->nullable();
+            $table->string('cycle')->unique()->nullable(false);
             $table->timestamps();
         });
     }
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('subject_grade');
+        Schema::dropIfExists('cycles');
     }
 };

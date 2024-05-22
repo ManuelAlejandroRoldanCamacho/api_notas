@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('subjects', function (Blueprint $table) {
             $table->id();
-            $table->string('subject_name')->nullable();
-            $table->unsignedBigInteger('teacher_asigned')->nullable();
-            $table->string('time_per_week')->nullable();
+            $table->string('subject')->nullable(false);
+            $table->unsignedBigInteger('teacher_asigned')->nullable(false);
+            $table->string('time_per_week')->nullable(false);
             $table->timestamps();
         });
     }

@@ -13,8 +13,13 @@ return new class extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
-            $table->double('note')->nullable();
-            $table->unsignedBigInteger('student')->nullable();
+            $table->double('note_one')->nullable(false);
+            $table->double('note_two')->nullable(false);
+            $table->double('note_three')->nullable(false);
+            $table->double('note_four')->nullable(false);
+            $table->double('note_average')->nullable(false);
+            $table->unsignedBigInteger('subject_id')->nullable(false);
+            $table->unsignedBigInteger('student_id')->nullable(false);
             $table->timestamps();
         });
     }
